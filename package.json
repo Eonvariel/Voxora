@@ -4,7 +4,7 @@
   "description": "Desktop Obsidian meeting recorder with live transcription and AI analysis.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Eonvariel/Voxora.git"
+    "url": "https://github.com/Eonvariel/Voxora"
   },
   "main": "main.js",
   "scripts": {
