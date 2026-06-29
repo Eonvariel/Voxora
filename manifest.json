@@ -1,0 +1,10 @@
+{
+  "id": "voxora",
+  "name": "Voxora",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Record meetings, transcribe them in real time, and generate AI-powered meeting minutes — all inside Obsidian.",
+  "author": "闫世杰",
+  "authorUrl": "https://github.com/Eonvariel",
+  "isDesktopOnly": true
+}

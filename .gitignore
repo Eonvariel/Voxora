@@ -1,0 +1,7 @@
+.worktrees/
+node_modules/
+.pnpm-store/
+main.js
+*.map
+.DS_Store
+coverage/

@@ -1,0 +1,211 @@
+.voxora-recorder-view {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px;
+}
+
+.voxora-recorder-view .setting-item {
+  padding: 0;
+}
+
+.voxora-api-warning {
+  color: var(--text-error);
+  font-weight: 600;
+  margin: 6px 0 10px;
+}
+
+.voxora-status-card {
+  align-items: center;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 12px 1fr;
+  padding: 12px;
+}
+
+.voxora-status-dot {
+  background: var(--text-muted);
+  border-radius: 999px;
+  height: 10px;
+  width: 10px;
+}
+
+.voxora-status-copy {
+  min-width: 0;
+}
+
+.voxora-status-caption {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.voxora-status-label {
+  color: var(--text-normal);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.voxora-status-hint {
+  color: var(--text-muted);
+  font-size: 12px;
+  grid-column: 2;
+  line-height: 1.4;
+}
+
+.voxora-status-card[data-status="recording"] .voxora-status-dot {
+  background: var(--color-red);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-red) 18%, transparent);
+}
+
+.voxora-status-card[data-status="paused"] .voxora-status-dot {
+  background: var(--color-yellow);
+}
+
+.voxora-status-card[data-status="analyzing"] .voxora-status-dot,
+.voxora-status-card[data-status="starting"] .voxora-status-dot,
+.voxora-status-card[data-status="stopping"] .voxora-status-dot {
+  background: var(--color-blue);
+}
+
+.voxora-status-card[data-status="completed"] .voxora-status-dot {
+  background: var(--color-green);
+}
+
+.voxora-status-card[data-status="failed"] .voxora-status-dot,
+.voxora-status-card[data-status="interrupted"] .voxora-status-dot {
+  background: var(--text-error);
+}
+
+.voxora-live-text {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  min-height: 96px;
+  padding: 8px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.voxora-ai-pending,
+.voxora-ai-error {
+  align-items: center;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.voxora-ai-pending {
+  background: var(--background-secondary);
+  color: var(--text-muted);
+}
+
+.voxora-ai-spinner {
+  animation: voxora-spin 900ms linear infinite;
+  border: 2px solid var(--background-modifier-border);
+  border-top-color: var(--interactive-accent);
+  border-radius: 999px;
+  height: 16px;
+  width: 16px;
+}
+
+.voxora-ai-error {
+  background: color-mix(in srgb, var(--text-error) 10%, transparent);
+  color: var(--text-error);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@keyframes voxora-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.voxora-floating-controls {
+  align-items: center;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 999px;
+  bottom: 26px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  display: flex;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+  padding: 8px 10px 8px 14px;
+  position: fixed;
+  right: 26px;
+  touch-action: none;
+  user-select: none;
+  z-index: 1000;
+}
+
+.voxora-floating-controls.is-dragging {
+  cursor: grabbing;
+}
+
+.voxora-floating-meta {
+  cursor: grab;
+  min-width: 54px;
+  text-align: center;
+}
+
+.voxora-floating-status {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.voxora-floating-time {
+  color: var(--text-normal);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.voxora-floating-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.voxora-floating-button {
+  align-items: center;
+  background: var(--interactive-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 999px;
+  color: var(--text-normal);
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  padding: 0;
+  width: 34px;
+}
+
+.voxora-floating-button:hover:not(:disabled) {
+  background: var(--interactive-hover);
+}
+
+.voxora-floating-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.36;
+}
+
+.voxora-floating-controls[data-status="recording"] {
+  border-color: color-mix(in srgb, var(--color-red) 45%, var(--background-modifier-border));
+}
+
+@media (max-width: 640px) {
+  .voxora-floating-controls {
+    bottom: 14px;
+    left: 12px;
+    right: 12px;
+    justify-content: space-between;
+  }
+}
